@@ -13,10 +13,7 @@ const MainLayoutRoute = ({ component: Component, ...rest }) => (
             <Layout {...rest}>
                 <Header/>
                 <Layout>
-                    <Layout style={{ padding: '0 24px 24px' }}>
-                        <Breadcrumb style={{ margin: '16px 0' }}>
-                            <Breadcrumb.Item>Home</Breadcrumb.Item>
-                        </Breadcrumb>
+                    <Layout style={{ paddingRight: '5px' }}>
                         <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
                             <Component {...props} />
                         </Content>
