@@ -9,7 +9,7 @@ C 语言是一种广泛使用的计算机语言，它与 Java 编程语言一样
 当前最新的C语言标准为 C11 ，在它之前的C语言标准为 C99。
 ## 第一个程序
 \`\`\`
-#include <stdio.h>
+#include &lt;stdio.h>
 int main()
 {
     /* 我的第一个 C 程序 */

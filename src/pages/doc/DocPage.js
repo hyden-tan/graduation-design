@@ -1,7 +1,8 @@
 import React from 'react';
 import marked, { Renderer } from 'marked';
 import hljs from 'highlight.js'
-import "highlight.js/styles/vs.css";
+import "highlight.js/styles/monokai-sublime.css";
+import './DocPage.css';
 
 import docs from '../../assets/docs';
 
@@ -39,7 +40,8 @@ export default class DocPage extends React.Component {
     getDoc() {
         const { location } = this.props;
         const title = location.pathname.replace('/doc/', '');
-        return docs[title]
+        console.log(title)
+        return docs[title] || docs['helloWorld']
     }
 
     render() {
