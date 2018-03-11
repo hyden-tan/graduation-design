@@ -12,16 +12,13 @@ export default class DocPage extends React.Component {
     }
 
     componentDidMount() {
-
         // window.hljs = require('highlight.js');
         // require('highlightjs-line-numbers.js');
 
         const doc = this.getDoc();
         const renderer = new Renderer();
-
         // window.hljs.initHighlightingOnLoad();
         // window.hljs.initLineNumbersOnLoad();
-
         hljs.initHighlightingOnLoad();
         renderer.code = (code, language) => {
             // Check whether the given language is valid for highlight.js.
@@ -40,8 +37,7 @@ export default class DocPage extends React.Component {
     getDoc() {
         const { location } = this.props;
         const title = location.pathname.replace('/doc/', '');
-        console.log(title)
-        return docs[title] || docs['helloWorld']
+        return docs[title] || docs['dataStructure']
     }
 
     render() {

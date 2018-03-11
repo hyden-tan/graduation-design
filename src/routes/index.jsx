@@ -11,10 +11,9 @@ const routes = (
         {
             routeConfig.list.map(item => {
                 const { name } = item;
-                const exact = name === 'home';
 
                 return (
-                    <MainLayoutRoute key={name} {...item} exact={exact} />
+                    <MainLayoutRoute key={name} {...item} />
                 );
             })
         }

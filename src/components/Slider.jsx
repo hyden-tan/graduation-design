@@ -25,6 +25,7 @@ export default class WrapSider extends React.Component {
                     <SubMenu key="sub1" title={<span>基础</span>}>
                         <Menu.Item key="helloWorld">Hello World</Menu.Item>
                         <Menu.Item key="keywordAndSymbols">符号和关键字</Menu.Item>
+                        <Menu.Item key="dataStructure">数据类型</Menu.Item>
                     </SubMenu>
                     <SubMenu key="sub2" title={<span>进阶</span>}>
                         <Menu.Item key="2">option</Menu.Item>

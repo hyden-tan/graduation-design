@@ -4,8 +4,8 @@ const title = 'C易学';
 
 const config = {
     list: [
-        { title, component: DocPage, path: '/', name: 'home' },
-        { title, component: DocPage, path: '/doc/:title', name: 'doc' },
+        { title, component: DocPage, path: '/', exact: true, name: 'home' },
+        { title, component: DocPage, path: '/doc/:title', exact: true, name: 'doc' },
     ]
 }
 
