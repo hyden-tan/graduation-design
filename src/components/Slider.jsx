@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
+import store from '../store';
+import docs from '../assets/docs';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -9,10 +11,18 @@ const { SubMenu } = Menu;
 export default class WrapSider extends React.Component {
     toggleDoc = ({ key }) => {
         this.props.history.push(`/doc/${key}`);
+        docs[key].content && store.save('doc', docs[key].content, false);
+    }
+
+    componentDidMount() {
+        const pathname = this.props.location.pathname;
+        if (/doc/.test(pathname)) {
+            const key = pathname.replace('/doc/', '');
+            this.toggleDoc({ key });
+        } 
     }
 
     render() {
-
         return (
             <Sider width={200} style={{background: '#fff'}}>
                 <Menu
