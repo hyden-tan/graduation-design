@@ -99,8 +99,8 @@ export default {
 
 
 
-    #include &lt;stdio.h>
-    #include &lt;limits.h>
+    #include <stdio.h>
+    #include <limits.h>
      
     int main()
     {
@@ -113,8 +113,8 @@ export default {
 
 **实例:**
 
-    #include &lt;stdio.h>
-    #include &lt;float.h>
+    #include <stdio.h>
+    #include <float.h>
      
     int main()
     {
