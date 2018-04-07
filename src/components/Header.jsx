@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import { inject, observer } from 'mobx-react';
 import { Layout, Menu, Modal, Form, Icon, Input, Button, message } from 'antd';
 import store from '../store';
 import axios from '../axios';
+import history from '../history';
 
 const { Header } = Layout;
 const FormItem = Form.Item;
@@ -76,7 +78,7 @@ class LoginForm extends React.Component {
   
 const WrappedLoginForm = Form.create()(LoginForm);
 
-
+@withRouter
 @inject('store')
 @observer
 export default class CustomHeader extends React.Component {
@@ -84,7 +86,7 @@ export default class CustomHeader extends React.Component {
         super(props);
 
         this.state = {
-            loginModalVisible: false,
+            loginModalVisible: false
         }
     }
 
@@ -94,16 +96,27 @@ export default class CustomHeader extends React.Component {
                 if (response.code !== 0) {
                     message.error(response.errMsg);
                 } else {
-                    store.save('user', { name: data.userName })
-                    this.setState({ loginModalVisible: false })
+                    store.save('user', { name: data.userName });
+                    this.setState({ loginModalVisible: false });
                 }
             })
             .catch(console.log)
     }
 
+    onMenuClick = ({ key }) => {
+        if ( key === 'login') {
+            this.setState({ loginModalVisible: true });
+        } else {
+            this.setState({ menuKey: key });
+            store.save('activeMenuKey', key);
+            const path = key === 'doc' ? `helloWorld` : key;
+            this.props.history.replace(path);
+        }
+    }
+
     render() {
         const { user } = this.props.store;
-        const { loginModalVisible } = this.state;
+        const { loginModalVisible, menuKey } = this.state;
 
         return (
             <Header>
@@ -111,30 +124,20 @@ export default class CustomHeader extends React.Component {
                 <Menu
                     theme="dark"
                     mode="horizontal"
-                    defaultSelectedKeys={[ store.activeHeaderMenu ]}
-                    onClick={({ key }) => { 
-                        if ( key === '3') {
-                            this.setState({ loginModalVisible: true });
-                            store.save('activeHeaderMenu', store.activeHeaderMenu);
-                        } else {
-                            store.save('activeHeaderMenu', key);
-                        }
-                    }}
+                    selectedKeys={[store.activeMenuKey]}
+                    onClick={this.onMenuClick}
                     style={{ lineHeight: '64px' }}
                 >
-                    <Menu.Item key="1">文档</Menu.Item>
-                    <Menu.Item key="2">题库</Menu.Item>
+                    <Menu.Item key="doc">文档</Menu.Item>
+                    <Menu.Item key="questions">题库</Menu.Item>
 
                     {
-                        user.name ? (
+                        user && user.name ? (
                             <span style={{ float: 'right', color: 'gray' }} >hello {user.name}!</span>
                         ) : (
-                            <Menu.Item key="3"
+                            <Menu.Item key="login"
                                 style={{ float: 'right', color: 'white' }} 
-                                onClick={() => {
-                                    
-                                    console.log('sfa')
-                                }}
+                                onClick={() => this.setState({ loginModalVisible: true })}
                             >
                                 登录
                             </Menu.Item>

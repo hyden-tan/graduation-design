@@ -3,7 +3,7 @@ import { localStorageUtils } from "../utils";
 
 class Store {
     @observable user = {};
-    @observable activeHeaderMenu = localStorageUtils.getItem('activeHeaderMenu') || '1';
+    @observable activeMenuKey = 'doc';
     @observable doc = '';
 
     @action

@@ -9,8 +9,9 @@ import './DocPage.css';
 
 @inject("store")
 @observer
-export default class DocPage extends React.PureComponent {
+export default class DocPage extends React.Component {
     render() {
+        console.log(this.props.match.params)
         const doc = hljsDoc(this.props.store.doc);
 
         return (

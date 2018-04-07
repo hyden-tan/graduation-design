@@ -42,5 +42,5 @@ export const hljsDoc = (() => {
     // Set the renderer to marked.
     marked.setOptions({ renderer });
 
-    return doc => marked(doc);
+    return doc => marked(doc || '');
 })()

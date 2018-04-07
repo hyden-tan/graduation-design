@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
 import store from '../store';
 import docs from '../assets/docs';
+import history from '../history';
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
@@ -10,16 +11,10 @@ const { SubMenu } = Menu;
 @withRouter
 export default class WrapSider extends React.Component {
     toggleDoc = ({ key }) => {
-        this.props.history.push(`/doc/${key}`);
-        docs[key].content && store.save('doc', docs[key].content, false);
-    }
+        this.props.history.replace(`${key}`);
 
-    componentDidMount() {
-        const pathname = this.props.location.pathname;
-        if (/doc/.test(pathname)) {
-            const key = pathname.replace('/doc/', '');
-            this.toggleDoc({ key });
-        } 
+        const _doc = docs[key] ? docs[key] : docs['helloWorld'];
+        store.save('doc', _doc.content, false);
     }
 
     render() {

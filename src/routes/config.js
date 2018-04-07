@@ -1,11 +1,13 @@
 import { DocPage } from '../pages/doc';
-
+import { QuestionList,  Question } from '../pages/questions';
+ 
 const title = 'C易学';
 
 const config = {
     list: [
-        { title, component: DocPage, path: '/', exact: true, name: 'home' },
-        { title, component: DocPage, path: '/doc/:title', exact: true, name: 'doc' },
+        { title, component: QuestionList, path: '/questions', name: 'questions'},
+        { title, component: Question, path: '/question/:id', name: 'questions'},
+        { title, component: DocPage, path: '/:title', name: 'doc' },
     ]
 }
 

@@ -1,5 +1,1 @@
-import DocPage from './DocPage';
-
-export  {
-    DocPage,
-};
+export { default as DocPage } from './DocPage';

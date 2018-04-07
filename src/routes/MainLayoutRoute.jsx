@@ -5,6 +5,8 @@ import { Layout, Breadcrumb } from 'antd';
 import Header from '../components/Header';
 import Sider from '../components/Slider';
 
+import store from '../store';
+
 const { Content } = Layout;
 
 const MainLayoutRoute = ({ component: Component, ...rest }) => (
@@ -18,7 +20,7 @@ const MainLayoutRoute = ({ component: Component, ...rest }) => (
                             <Component {...props} />
                         </Content>
                     </Layout>
-                    <Sider/>
+                    {store.activeMenuKey === 'doc' && <Sider/>}
                 </Layout>
             </Layout>
         )}
