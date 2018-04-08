@@ -5,11 +5,21 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/monokai.css';
 import 'codemirror/theme/seti.css';
 
+import axios from '../../axios';
+
 require('codemirror/keymap/sublime.js');
 require('codemirror/mode/cmake/cmake.js');
 
 
 export class Question extends Component { 
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            result: ''
+        }
+    }
+
     componentDidMount() {
         this.codemirrorInit();
     }
@@ -32,12 +42,25 @@ export class Question extends Component {
     }
 
     onSubmit = () => {
-        console.log(this.codeMirror.getValue())
+        axios.post('/run', { code: this.codeMirror.getValue()} )
+            .then(response => {
+                console.log(response)
+                if (!response) {
+                    return this.setState({result: '编译不通过'});
+                }
+                if (response.code === 0) {
+                    return this.setState({result: response.result})
+                }
+                
+                this.setState({result: response.errMsg})
+            })
+            .catch(console.log)
     }
 
 
     render() {
-        console.log(this.props.match.params.id);
+        const { result } = this.state;
+
         return (
         <div style={{ padding: '10px 5%'}}>
             <h4>题目名称： 编写一个Hello world代码</h4>
@@ -48,6 +71,10 @@ export class Question extends Component {
                 <textarea id="code" style={{width: '100%', height: '300px'}}></textarea>
             </div>
             <Button onClick={this.onSubmit}>编译运行</Button>
+            <h4 style={{marginTop: '20px'}}>运行结果:</h4>
+            <div style={{ width: '100%', minHeight: '100px', backgroundColor: '#151718', color: 'white', padding: '10px'}}>
+                {result}
+            </div>
         </div>
         )
     }

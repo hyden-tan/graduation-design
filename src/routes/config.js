@@ -8,6 +8,7 @@ const config = {
         { title, component: QuestionList, path: '/questions', name: 'questions'},
         { title, component: Question, path: '/question/:id', name: 'questions'},
         { title, component: DocPage, path: '/:title', name: 'doc' },
+        { title, component: DocPage, name: 'doc' },
     ]
 }
 
