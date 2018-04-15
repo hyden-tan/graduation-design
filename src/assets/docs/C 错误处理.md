@@ -1,15 +1,15 @@
-# C ´íÎó´¦Àí
+# C é”™è¯¯å¤„ç†
 
-C ÓïÑÔ²»Ìá¹©¶Ô´íÎó´¦ÀíµÄÖ±½ÓÖ§³Ö£¬µ«ÊÇ×÷ÎªÒ»ÖÖÏµÍ³±à³ÌÓïÑÔ£¬ËüÒÔ·µ»ØÖµµÄÐÎÊ½ÔÊÐíÄú·ÃÎÊµ×²ãÊý¾Ý¡£ÔÚ·¢Éú´íÎóÊ±£¬´ó¶àÊýµÄ C »ò UNIX º¯Êýµ÷ÓÃ·µ»Ø 1 »ò NULL£¬Í¬Ê±»áÉèÖÃÒ»¸ö´íÎó´úÂë errno£¬¸Ã´íÎó´úÂëÊÇÈ«¾Ö±äÁ¿£¬±íÊ¾ÔÚº¯Êýµ÷ÓÃÆÚ¼ä·¢ÉúÁË´íÎó¡£Äú¿ÉÒÔÔÚ <error.h> Í·ÎÄ¼þÖÐÕÒµ½¸÷ÖÖ¸÷ÑùµÄ´íÎó´úÂë¡£
-ËùÒÔ£¬C ³ÌÐòÔ±¿ÉÒÔÍ¨¹ý¼ì²é·µ»ØÖµ£¬È»ºó¸ù¾Ý·µ»ØÖµ¾ö¶¨²ÉÈ¡ÄÄÖÖÊÊµ±µÄ¶¯×÷¡£¿ª·¢ÈËÔ±Ó¦¸ÃÔÚ³ÌÐò³õÊ¼»¯Ê±£¬°Ñ errno ÉèÖÃÎª 0£¬ÕâÊÇÒ»ÖÖÁ¼ºÃµÄ±à³ÌÏ°¹ß¡£0 Öµ±íÊ¾³ÌÐòÖÐÃ»ÓÐ´íÎó¡£
+C è¯­è¨€ä¸æä¾›å¯¹é”™è¯¯å¤„ç†çš„ç›´æŽ¥æ”¯æŒï¼Œä½†æ˜¯ä½œä¸ºä¸€ç§ç³»ç»Ÿç¼–ç¨‹è¯­è¨€ï¼Œå®ƒä»¥è¿”å›žå€¼çš„å½¢å¼å…è®¸æ‚¨è®¿é—®åº•å±‚æ•°æ®ã€‚åœ¨å‘ç”Ÿé”™è¯¯æ—¶ï¼Œå¤§å¤šæ•°çš„ C æˆ– UNIX å‡½æ•°è°ƒç”¨è¿”å›ž 1 æˆ– NULLï¼ŒåŒæ—¶ä¼šè®¾ç½®ä¸€ä¸ªé”™è¯¯ä»£ç  errnoï¼Œè¯¥é”™è¯¯ä»£ç æ˜¯å…¨å±€å˜é‡ï¼Œè¡¨ç¤ºåœ¨å‡½æ•°è°ƒç”¨æœŸé—´å‘ç”Ÿäº†é”™è¯¯ã€‚æ‚¨å¯ä»¥åœ¨ <error.h> å¤´æ–‡ä»¶ä¸­æ‰¾åˆ°å„ç§å„æ ·çš„é”™è¯¯ä»£ç ã€‚
+æ‰€ä»¥ï¼ŒC ç¨‹åºå‘˜å¯ä»¥é€šè¿‡æ£€æŸ¥è¿”å›žå€¼ï¼Œç„¶åŽæ ¹æ®è¿”å›žå€¼å†³å®šé‡‡å–å“ªç§é€‚å½“çš„åŠ¨ä½œã€‚å¼€å‘äººå‘˜åº”è¯¥åœ¨ç¨‹åºåˆå§‹åŒ–æ—¶ï¼ŒæŠŠ errno è®¾ç½®ä¸º 0ï¼Œè¿™æ˜¯ä¸€ç§è‰¯å¥½çš„ç¼–ç¨‹ä¹ æƒ¯ã€‚0 å€¼è¡¨ç¤ºç¨‹åºä¸­æ²¡æœ‰é”™è¯¯ã€‚
 
-## errno¡¢perror() ºÍ strerror()
-C ÓïÑÔÌá¹©ÁË perror() ºÍ strerror() º¯ÊýÀ´ÏÔÊ¾Óë errno Ïà¹ØµÄÎÄ±¾ÏûÏ¢¡£
+## errnoã€perror() å’Œ strerror()
+C è¯­è¨€æä¾›äº† perror() å’Œ strerror() å‡½æ•°æ¥æ˜¾ç¤ºä¸Ž errno ç›¸å…³çš„æ–‡æœ¬æ¶ˆæ¯ã€‚
 
-- perror() º¯ÊýÏÔÊ¾Äú´«¸øËüµÄ×Ö·û´®£¬ºó¸úÒ»¸öÃ°ºÅ¡¢Ò»¸ö¿Õ¸ñºÍµ±Ç° errno ÖµµÄÎÄ±¾±íÊ¾ÐÎÊ½¡£
-- strerror() º¯Êý£¬·µ»ØÒ»¸öÖ¸Õë£¬Ö¸ÕëÖ¸Ïòµ±Ç° errno ÖµµÄÎÄ±¾±íÊ¾ÐÎÊ½¡£
+- perror() å‡½æ•°æ˜¾ç¤ºæ‚¨ä¼ ç»™å®ƒçš„å­—ç¬¦ä¸²ï¼ŒåŽè·Ÿä¸€ä¸ªå†’å·ã€ä¸€ä¸ªç©ºæ ¼å’Œå½“å‰ errno å€¼çš„æ–‡æœ¬è¡¨ç¤ºå½¢å¼ã€‚
+- strerror() å‡½æ•°ï¼Œè¿”å›žä¸€ä¸ªæŒ‡é’ˆï¼ŒæŒ‡é’ˆæŒ‡å‘å½“å‰ errno å€¼çš„æ–‡æœ¬è¡¨ç¤ºå½¢å¼ã€‚
 
-ÈÃÎÒÃÇÀ´Ä£ÄâÒ»ÖÖ´íÎóÇé¿ö£¬³¢ÊÔ´ò¿ªÒ»¸ö²»´æÔÚµÄÎÄ¼þ¡£Äú¿ÉÒÔÊ¹ÓÃ¶àÖÖ·½Ê½À´Êä³ö´íÎóÏûÏ¢£¬ÔÚÕâÀïÎÒÃÇÊ¹ÓÃº¯ÊýÀ´ÑÝÊ¾ÓÃ·¨¡£ÁíÍâÓÐÒ»µãÐèÒª×¢Òâ£¬ÄúÓ¦¸ÃÊ¹ÓÃ stderr ÎÄ¼þÁ÷À´Êä³öËùÓÐµÄ´íÎó¡£
+è®©æˆ‘ä»¬æ¥æ¨¡æ‹Ÿä¸€ç§é”™è¯¯æƒ…å†µï¼Œå°è¯•æ‰“å¼€ä¸€ä¸ªä¸å­˜åœ¨çš„æ–‡ä»¶ã€‚æ‚¨å¯ä»¥ä½¿ç”¨å¤šç§æ–¹å¼æ¥è¾“å‡ºé”™è¯¯æ¶ˆæ¯ï¼Œåœ¨è¿™é‡Œæˆ‘ä»¬ä½¿ç”¨å‡½æ•°æ¥æ¼”ç¤ºç”¨æ³•ã€‚å¦å¤–æœ‰ä¸€ç‚¹éœ€è¦æ³¨æ„ï¼Œæ‚¨åº”è¯¥ä½¿ç”¨ stderr æ–‡ä»¶æµæ¥è¾“å‡ºæ‰€æœ‰çš„é”™è¯¯ã€‚
 
     #include &lt;stdio.h>
     #include &lt;errno.h>
@@ -25,9 +25,9 @@ C ÓïÑÔÌá¹©ÁË perror() ºÍ strerror() º¯ÊýÀ´ÏÔÊ¾Óë errno Ïà¹ØµÄÎÄ±¾ÏûÏ¢¡£
        if (pf == NULL)
        {
           errnum = errno;
-          fprintf(stderr, "´íÎóºÅ: %d\n", errno);
-          perror("Í¨¹ý perror Êä³ö´íÎó");
-          fprintf(stderr, "´ò¿ªÎÄ¼þ´íÎó: %s\n", strerror( errnum ));
+          fprintf(stderr, "é”™è¯¯å·: %d\n", errno);
+          perror("é€šè¿‡ perror è¾“å‡ºé”™è¯¯");
+          fprintf(stderr, "æ‰“å¼€æ–‡ä»¶é”™è¯¯: %s\n", strerror( errnum ));
        }
        else
        {
@@ -36,16 +36,16 @@ C ÓïÑÔÌá¹©ÁË perror() ºÍ strerror() º¯ÊýÀ´ÏÔÊ¾Óë errno Ïà¹ØµÄÎÄ±¾ÏûÏ¢¡£
        return 0;
     }
 
-µ±ÉÏÃæµÄ´úÂë±»±àÒëºÍÖ´ÐÐÊ±£¬Ëü»á²úÉúÏÂÁÐ½á¹û£º
+å½“ä¸Šé¢çš„ä»£ç è¢«ç¼–è¯‘å’Œæ‰§è¡Œæ—¶ï¼Œå®ƒä¼šäº§ç”Ÿä¸‹åˆ—ç»“æžœï¼š
 
-    ´íÎóºÅ: 2
-    Í¨¹ý perror Êä³ö´íÎó: No such file or directory
-    ´ò¿ªÎÄ¼þ´íÎó: No such file or directory
+    é”™è¯¯å·: 2
+    é€šè¿‡ perror è¾“å‡ºé”™è¯¯: No such file or directory
+    æ‰“å¼€æ–‡ä»¶é”™è¯¯: No such file or directory
 
-## ±»Áã³ýµÄ´íÎó
+## è¢«é›¶é™¤çš„é”™è¯¯
 
-ÔÚ½øÐÐ³ý·¨ÔËËãÊ±£¬Èç¹û²»¼ì²é³ýÊýÊÇ·ñÎªÁã£¬Ôò»áµ¼ÖÂÒ»¸öÔËÐÐÊ±´íÎó¡£
-ÎªÁË±ÜÃâÕâÖÖÇé¿ö·¢Éú£¬ÏÂÃæµÄ´úÂëÔÚ½øÐÐ³ý·¨ÔËËãÇ°»áÏÈ¼ì²é³ýÊýÊÇ·ñÎªÁã£º
+åœ¨è¿›è¡Œé™¤æ³•è¿ç®—æ—¶ï¼Œå¦‚æžœä¸æ£€æŸ¥é™¤æ•°æ˜¯å¦ä¸ºé›¶ï¼Œåˆ™ä¼šå¯¼è‡´ä¸€ä¸ªè¿è¡Œæ—¶é”™è¯¯ã€‚
+ä¸ºäº†é¿å…è¿™ç§æƒ…å†µå‘ç”Ÿï¼Œä¸‹é¢çš„ä»£ç åœ¨è¿›è¡Œé™¤æ³•è¿ç®—å‰ä¼šå…ˆæ£€æŸ¥é™¤æ•°æ˜¯å¦ä¸ºé›¶ï¼š
 
     #include &lt;stdio.h>
     #include &lt;stdlib.h>
@@ -57,22 +57,22 @@ C ÓïÑÔÌá¹©ÁË perror() ºÍ strerror() º¯ÊýÀ´ÏÔÊ¾Óë errno Ïà¹ØµÄÎÄ±¾ÏûÏ¢¡£
        int quotient;
      
        if( divisor == 0){
-          fprintf(stderr, "³ýÊýÎª 0 ÍË³öÔËÐÐ...\n");
+          fprintf(stderr, "é™¤æ•°ä¸º 0 é€€å‡ºè¿è¡Œ...\n");
           exit(-1);
        }
        quotient = dividend / divisor;
-       fprintf(stderr, "quotient ±äÁ¿µÄÖµÎª : %d\n", quotient );
+       fprintf(stderr, "quotient å˜é‡çš„å€¼ä¸º : %d\n", quotient );
     
        exit(0);
     }
 
-µ±ÉÏÃæµÄ´úÂë±»±àÒëºÍÖ´ÐÐÊ±£¬Ëü»á²úÉúÏÂÁÐ½á¹û£º
+å½“ä¸Šé¢çš„ä»£ç è¢«ç¼–è¯‘å’Œæ‰§è¡Œæ—¶ï¼Œå®ƒä¼šäº§ç”Ÿä¸‹åˆ—ç»“æžœï¼š
 
-    ³ýÊýÎª 0 ÍË³öÔËÐÐ...
+    é™¤æ•°ä¸º 0 é€€å‡ºè¿è¡Œ...
 
-## ³ÌÐòÍË³ö×´Ì¬
-Í¨³£Çé¿öÏÂ£¬³ÌÐò³É¹¦Ö´ÐÐÍêÒ»¸ö²Ù×÷Õý³£ÍË³öµÄÊ±ºò»á´øÓÐÖµ EXIT_SUCCESS¡£ÔÚÕâÀï£¬EXIT_SUCCESS ÊÇºê£¬Ëü±»¶¨ÒåÎª 0¡£
-Èç¹û³ÌÐòÖÐ´æÔÚÒ»ÖÖ´íÎóÇé¿ö£¬µ±ÄúÍË³ö³ÌÐòÊ±£¬»á´øÓÐ×´Ì¬Öµ EXIT_FAILURE£¬±»¶¨ÒåÎª -1¡£ËùÒÔ£¬ÉÏÃæµÄ³ÌÐò¿ÉÒÔÐ´³É£º
+## ç¨‹åºé€€å‡ºçŠ¶æ€
+é€šå¸¸æƒ…å†µä¸‹ï¼Œç¨‹åºæˆåŠŸæ‰§è¡Œå®Œä¸€ä¸ªæ“ä½œæ­£å¸¸é€€å‡ºçš„æ—¶å€™ä¼šå¸¦æœ‰å€¼ EXIT_SUCCESSã€‚åœ¨è¿™é‡Œï¼ŒEXIT_SUCCESS æ˜¯å®ï¼Œå®ƒè¢«å®šä¹‰ä¸º 0ã€‚
+å¦‚æžœç¨‹åºä¸­å­˜åœ¨ä¸€ç§é”™è¯¯æƒ…å†µï¼Œå½“æ‚¨é€€å‡ºç¨‹åºæ—¶ï¼Œä¼šå¸¦æœ‰çŠ¶æ€å€¼ EXIT_FAILUREï¼Œè¢«å®šä¹‰ä¸º -1ã€‚æ‰€ä»¥ï¼Œä¸Šé¢çš„ç¨‹åºå¯ä»¥å†™æˆï¼š
 
     #include &lt;stdio.h>
     #include &lt;stdlib.h>
@@ -84,15 +84,15 @@ C ÓïÑÔÌá¹©ÁË perror() ºÍ strerror() º¯ÊýÀ´ÏÔÊ¾Óë errno Ïà¹ØµÄÎÄ±¾ÏûÏ¢¡£
        int quotient;
      
        if( divisor == 0){
-          fprintf(stderr, "³ýÊýÎª 0 ÍË³öÔËÐÐ...\n");
+          fprintf(stderr, "é™¤æ•°ä¸º 0 é€€å‡ºè¿è¡Œ...\n");
           exit(EXIT_FAILURE);
        }
        quotient = dividend / divisor;
-       fprintf(stderr, "quotient ±äÁ¿µÄÖµÎª: %d\n", quotient );
+       fprintf(stderr, "quotient å˜é‡çš„å€¼ä¸º: %d\n", quotient );
     
        exit(EXIT_SUCCESS);
     }
 
-µ±ÉÏÃæµÄ´úÂë±»±àÒëºÍÖ´ÐÐÊ±£¬Ëü»á²úÉúÏÂÁÐ½á¹û£º
+å½“ä¸Šé¢çš„ä»£ç è¢«ç¼–è¯‘å’Œæ‰§è¡Œæ—¶ï¼Œå®ƒä¼šäº§ç”Ÿä¸‹åˆ—ç»“æžœï¼š
 
-    quotient ±äÁ¿µÄÖµÎª : 4
+    quotient å˜é‡çš„å€¼ä¸º : 4

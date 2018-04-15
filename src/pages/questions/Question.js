@@ -10,7 +10,6 @@ import axios from '../../axios';
 require('codemirror/keymap/sublime.js');
 require('codemirror/mode/cmake/cmake.js');
 
-
 export class Question extends Component { 
     constructor(props) {
         super(props);
@@ -73,7 +72,7 @@ export class Question extends Component {
             <Button onClick={this.onSubmit}>编译运行</Button>
             <h4 style={{marginTop: '20px'}}>运行结果:</h4>
             <div style={{ width: '100%', minHeight: '100px', backgroundColor: '#151718', color: 'white', padding: '10px'}}>
-                {result}
+                <pre>{result}</pre> 
             </div>
         </div>
         )

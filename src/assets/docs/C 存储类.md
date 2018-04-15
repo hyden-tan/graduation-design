@@ -1,37 +1,37 @@
-# C ´æ´¢Àà
+# C å­˜å‚¨ç±»
 
-´æ´¢Àà¶¨Òå C ³ÌÐòÖÐ±äÁ¿/º¯ÊýµÄ·¶Î§£¨¿É¼ûÐÔ£©ºÍÉúÃüÖÜÆÚ¡£ÕâÐ©ËµÃ÷·û·ÅÖÃÔÚËüÃÇËùÐÞÊÎµÄÀàÐÍÖ®Ç°¡£ÏÂÃæÁÐ³ö C ³ÌÐòÖÐ¿ÉÓÃµÄ´æ´¢Àà£º
+å­˜å‚¨ç±»å®šä¹‰ C ç¨‹åºä¸­å˜é‡/å‡½æ•°çš„èŒƒå›´ï¼ˆå¯è§æ€§ï¼‰å’Œç”Ÿå‘½å‘¨æœŸã€‚è¿™äº›è¯´æ˜Žç¬¦æ”¾ç½®åœ¨å®ƒä»¬æ‰€ä¿®é¥°çš„ç±»åž‹ä¹‹å‰ã€‚ä¸‹é¢åˆ—å‡º C ç¨‹åºä¸­å¯ç”¨çš„å­˜å‚¨ç±»ï¼š
 - auto
 - register
 - static
 - extern
 
-## auto ´æ´¢Àà
+## auto å­˜å‚¨ç±»
 
-auto ´æ´¢ÀàÊÇËùÓÐ¾Ö²¿±äÁ¿Ä¬ÈÏµÄ´æ´¢Àà¡£
+auto å­˜å‚¨ç±»æ˜¯æ‰€æœ‰å±€éƒ¨å˜é‡é»˜è®¤çš„å­˜å‚¨ç±»ã€‚
 
     {
        int mount;
        auto int month;
     }
 
-ÉÏÃæµÄÊµÀý¶¨ÒåÁËÁ½¸ö´øÓÐÏàÍ¬´æ´¢ÀàµÄ±äÁ¿£¬auto Ö»ÄÜÓÃÔÚº¯ÊýÄÚ£¬¼´ auto Ö»ÄÜÐÞÊÎ¾Ö²¿±äÁ¿¡£
+ä¸Šé¢çš„å®žä¾‹å®šä¹‰äº†ä¸¤ä¸ªå¸¦æœ‰ç›¸åŒå­˜å‚¨ç±»çš„å˜é‡ï¼Œauto åªèƒ½ç”¨åœ¨å‡½æ•°å†…ï¼Œå³ auto åªèƒ½ä¿®é¥°å±€éƒ¨å˜é‡ã€‚
 
-## register ´æ´¢Àà
+## register å­˜å‚¨ç±»
 
-register ´æ´¢ÀàÓÃÓÚ¶¨Òå´æ´¢ÔÚ¼Ä´æÆ÷ÖÐ¶ø²»ÊÇ RAM ÖÐµÄ¾Ö²¿±äÁ¿¡£ÕâÒâÎ¶×Å±äÁ¿µÄ×î´ó³ß´çµÈÓÚ¼Ä´æÆ÷µÄ´óÐ¡£¨Í¨³£ÊÇÒ»¸ö´Ê£©£¬ÇÒ²»ÄÜ¶ÔËüÓ¦ÓÃÒ»ÔªµÄ '&' ÔËËã·û£¨ÒòÎªËüÃ»ÓÐÄÚ´æÎ»ÖÃ£©¡£
+register å­˜å‚¨ç±»ç”¨äºŽå®šä¹‰å­˜å‚¨åœ¨å¯„å­˜å™¨ä¸­è€Œä¸æ˜¯ RAM ä¸­çš„å±€éƒ¨å˜é‡ã€‚è¿™æ„å‘³ç€å˜é‡çš„æœ€å¤§å°ºå¯¸ç­‰äºŽå¯„å­˜å™¨çš„å¤§å°ï¼ˆé€šå¸¸æ˜¯ä¸€ä¸ªè¯ï¼‰ï¼Œä¸”ä¸èƒ½å¯¹å®ƒåº”ç”¨ä¸€å…ƒçš„ '&' è¿ç®—ç¬¦ï¼ˆå› ä¸ºå®ƒæ²¡æœ‰å†…å­˜ä½ç½®ï¼‰ã€‚
 
     {
        register int  miles;
     }
 
-¼Ä´æÆ÷Ö»ÓÃÓÚÐèÒª¿ìËÙ·ÃÎÊµÄ±äÁ¿£¬±ÈÈç¼ÆÊýÆ÷¡£»¹Ó¦×¢ÒâµÄÊÇ£¬¶¨Òå 'register' ²¢²»ÒâÎ¶×Å±äÁ¿½«±»´æ´¢ÔÚ¼Ä´æÆ÷ÖÐ£¬ËüÒâÎ¶×Å±äÁ¿¿ÉÄÜ´æ´¢ÔÚ¼Ä´æÆ÷ÖÐ£¬ÕâÈ¡¾öÓÚÓ²¼þºÍÊµÏÖµÄÏÞÖÆ¡£
+å¯„å­˜å™¨åªç”¨äºŽéœ€è¦å¿«é€Ÿè®¿é—®çš„å˜é‡ï¼Œæ¯”å¦‚è®¡æ•°å™¨ã€‚è¿˜åº”æ³¨æ„çš„æ˜¯ï¼Œå®šä¹‰ 'register' å¹¶ä¸æ„å‘³ç€å˜é‡å°†è¢«å­˜å‚¨åœ¨å¯„å­˜å™¨ä¸­ï¼Œå®ƒæ„å‘³ç€å˜é‡å¯èƒ½å­˜å‚¨åœ¨å¯„å­˜å™¨ä¸­ï¼Œè¿™å–å†³äºŽç¡¬ä»¶å’Œå®žçŽ°çš„é™åˆ¶ã€‚
 
-## static ´æ´¢Àà
+## static å­˜å‚¨ç±»
 
-static ´æ´¢ÀàÖ¸Ê¾±àÒëÆ÷ÔÚ³ÌÐòµÄÉúÃüÖÜÆÚÄÚ±£³Ö¾Ö²¿±äÁ¿µÄ´æÔÚ£¬¶ø²»ÐèÒªÔÚÃ¿´ÎËü½øÈëºÍÀë¿ª×÷ÓÃÓòÊ±½øÐÐ´´½¨ºÍÏú»Ù¡£Òò´Ë£¬Ê¹ÓÃ static ÐÞÊÎ¾Ö²¿±äÁ¿¿ÉÒÔÔÚº¯Êýµ÷ÓÃÖ®¼ä±£³Ö¾Ö²¿±äÁ¿µÄÖµ¡£
-static ÐÞÊÎ·ûÒ²¿ÉÒÔÓ¦ÓÃÓÚÈ«¾Ö±äÁ¿¡£µ± static ÐÞÊÎÈ«¾Ö±äÁ¿Ê±£¬»áÊ¹±äÁ¿µÄ×÷ÓÃÓòÏÞÖÆÔÚÉùÃ÷ËüµÄÎÄ¼þÄÚ¡£
-static ÊÇÈ«¾Ö±äÁ¿µÄÄ¬ÈÏ´æ´¢Àà£¬ÒÔÏÂÁ½¸ö±äÁ¿ (count ºÍ road) ¶¼ÓÐÒ»¸ö static ´æ´¢Àà¡£
+static å­˜å‚¨ç±»æŒ‡ç¤ºç¼–è¯‘å™¨åœ¨ç¨‹åºçš„ç”Ÿå‘½å‘¨æœŸå†…ä¿æŒå±€éƒ¨å˜é‡çš„å­˜åœ¨ï¼Œè€Œä¸éœ€è¦åœ¨æ¯æ¬¡å®ƒè¿›å…¥å’Œç¦»å¼€ä½œç”¨åŸŸæ—¶è¿›è¡Œåˆ›å»ºå’Œé”€æ¯ã€‚å› æ­¤ï¼Œä½¿ç”¨ static ä¿®é¥°å±€éƒ¨å˜é‡å¯ä»¥åœ¨å‡½æ•°è°ƒç”¨ä¹‹é—´ä¿æŒå±€éƒ¨å˜é‡çš„å€¼ã€‚
+static ä¿®é¥°ç¬¦ä¹Ÿå¯ä»¥åº”ç”¨äºŽå…¨å±€å˜é‡ã€‚å½“ static ä¿®é¥°å…¨å±€å˜é‡æ—¶ï¼Œä¼šä½¿å˜é‡çš„ä½œç”¨åŸŸé™åˆ¶åœ¨å£°æ˜Žå®ƒçš„æ–‡ä»¶å†…ã€‚
+static æ˜¯å…¨å±€å˜é‡çš„é»˜è®¤å­˜å‚¨ç±»ï¼Œä»¥ä¸‹ä¸¤ä¸ªå˜é‡ (count å’Œ road) éƒ½æœ‰ä¸€ä¸ª static å­˜å‚¨ç±»ã€‚
 
     #include &lt;stdio.h>
     static int Count=10;
@@ -43,14 +43,14 @@ static ÊÇÈ«¾Ö±äÁ¿µÄÄ¬ÈÏ´æ´¢Àà£¬ÒÔÏÂÁ½¸ö±äÁ¿ (count ºÍ road) ¶¼ÓÐÒ»¸ö static ´æ´¢
      }
 
 
-**ÊµÀý**
+**å®žä¾‹**
 
     #include &lt;stdio.h>
      
-    /* º¯ÊýÉùÃ÷ */
+    /* å‡½æ•°å£°æ˜Ž */
     void func1(void);
      
-    static int count=10;        /* È«¾Ö±äÁ¿ - static ÊÇÄ¬ÈÏµÄ */
+    static int count=10;        /* å…¨å±€å˜é‡ - static æ˜¯é»˜è®¤çš„ */
      
     int main()
     {
@@ -62,36 +62,36 @@ static ÊÇÈ«¾Ö±äÁ¿µÄÄ¬ÈÏ´æ´¢Àà£¬ÒÔÏÂÁ½¸ö±äÁ¿ (count ºÍ road) ¶¼ÓÐÒ»¸ö static ´æ´¢
      
     void func1(void)
     {
-    /* 'thingy' ÊÇ 'func1' µÄ¾Ö²¿±äÁ¿ - Ö»³õÊ¼»¯Ò»´Î
-     * Ã¿´Îµ÷ÓÃº¯Êý 'func1' 'thingy' Öµ²»»á±»ÖØÖÃ¡£
+    /* 'thingy' æ˜¯ 'func1' çš„å±€éƒ¨å˜é‡ - åªåˆå§‹åŒ–ä¸€æ¬¡
+     * æ¯æ¬¡è°ƒç”¨å‡½æ•° 'func1' 'thingy' å€¼ä¸ä¼šè¢«é‡ç½®ã€‚
      */                
       static int thingy=5;
       thingy++;
-      printf(" thingy Îª %d £¬ count Îª %d\n", thingy, count);
+      printf(" thingy ä¸º %d ï¼Œ count ä¸º %d\n", thingy, count);
     }
 
-ÊµÀýÖÐ count ×÷ÎªÈ«¾Ö±äÁ¿¿ÉÒÔÔÚº¯ÊýÄÚÊ¹ÓÃ£¬thingy Ê¹ÓÃ static ÐÞÊÎºó£¬²»»áÔÙÃ¿´Îµ÷ÓÃÊ±ÖØÖÃ¡£
-¿ÉÄÜÄúÏÖÔÚ»¹ÎÞ·¨Àí½âÕâ¸öÊµÀý£¬ÒòÎªÎÒÒÑ¾­Ê¹ÓÃÁËº¯ÊýºÍÈ«¾Ö±äÁ¿£¬ÕâÁ½¸ö¸ÅÄîÄ¿Ç°ÎªÖ¹»¹Ã»½øÐÐ½²½â¡£¼´Ê¹ÄúÏÖÔÚ²»ÄÜÍêÈ«Àí½â£¬Ò²Ã»ÓÐ¹ØÏµ£¬ºóÐøµÄÕÂ½ÚÎÒÃÇ»áÏêÏ¸½²½â¡£µ±ÉÏÃæµÄ´úÂë±»±àÒëºÍÖ´ÐÐÊ±£¬Ëü»á²úÉúÏÂÁÐ½á¹û£º
+å®žä¾‹ä¸­ count ä½œä¸ºå…¨å±€å˜é‡å¯ä»¥åœ¨å‡½æ•°å†…ä½¿ç”¨ï¼Œthingy ä½¿ç”¨ static ä¿®é¥°åŽï¼Œä¸ä¼šå†æ¯æ¬¡è°ƒç”¨æ—¶é‡ç½®ã€‚
+å¯èƒ½æ‚¨çŽ°åœ¨è¿˜æ— æ³•ç†è§£è¿™ä¸ªå®žä¾‹ï¼Œå› ä¸ºæˆ‘å·²ç»ä½¿ç”¨äº†å‡½æ•°å’Œå…¨å±€å˜é‡ï¼Œè¿™ä¸¤ä¸ªæ¦‚å¿µç›®å‰ä¸ºæ­¢è¿˜æ²¡è¿›è¡Œè®²è§£ã€‚å³ä½¿æ‚¨çŽ°åœ¨ä¸èƒ½å®Œå…¨ç†è§£ï¼Œä¹Ÿæ²¡æœ‰å…³ç³»ï¼ŒåŽç»­çš„ç« èŠ‚æˆ‘ä»¬ä¼šè¯¦ç»†è®²è§£ã€‚å½“ä¸Šé¢çš„ä»£ç è¢«ç¼–è¯‘å’Œæ‰§è¡Œæ—¶ï¼Œå®ƒä¼šäº§ç”Ÿä¸‹åˆ—ç»“æžœï¼š
 
-     thingy Îª 6 £¬ count Îª 9
-     thingy Îª 7 £¬ count Îª 8
-     thingy Îª 8 £¬ count Îª 7
-     thingy Îª 9 £¬ count Îª 6
-     thingy Îª 10 £¬ count Îª 5
-     thingy Îª 11 £¬ count Îª 4
-     thingy Îª 12 £¬ count Îª 3
-     thingy Îª 13 £¬ count Îª 2
-     thingy Îª 14 £¬ count Îª 1
-     thingy Îª 15 £¬ count Îª 0
+     thingy ä¸º 6 ï¼Œ count ä¸º 9
+     thingy ä¸º 7 ï¼Œ count ä¸º 8
+     thingy ä¸º 8 ï¼Œ count ä¸º 7
+     thingy ä¸º 9 ï¼Œ count ä¸º 6
+     thingy ä¸º 10 ï¼Œ count ä¸º 5
+     thingy ä¸º 11 ï¼Œ count ä¸º 4
+     thingy ä¸º 12 ï¼Œ count ä¸º 3
+     thingy ä¸º 13 ï¼Œ count ä¸º 2
+     thingy ä¸º 14 ï¼Œ count ä¸º 1
+     thingy ä¸º 15 ï¼Œ count ä¸º 0
 
-## extern ´æ´¢Àà
-extern ´æ´¢ÀàÓÃÓÚÌá¹©Ò»¸öÈ«¾Ö±äÁ¿µÄÒýÓÃ£¬È«¾Ö±äÁ¿¶ÔËùÓÐµÄ³ÌÐòÎÄ¼þ¶¼ÊÇ¿É¼ûµÄ¡£µ±ÄúÊ¹ÓÃ 'extern' Ê±£¬¶ÔÓÚÎÞ·¨³õÊ¼»¯µÄ±äÁ¿£¬»á°Ñ±äÁ¿ÃûÖ¸ÏòÒ»¸öÖ®Ç°¶¨Òå¹ýµÄ´æ´¢Î»ÖÃ¡£
-µ±ÄúÓÐ¶à¸öÎÄ¼þÇÒ¶¨ÒåÁËÒ»¸ö¿ÉÒÔÔÚÆäËûÎÄ¼þÖÐÊ¹ÓÃµÄÈ«¾Ö±äÁ¿»òº¯ÊýÊ±£¬¿ÉÒÔÔÚÆäËûÎÄ¼þÖÐÊ¹ÓÃ extern À´µÃµ½ÒÑ¶¨ÒåµÄ±äÁ¿»òº¯ÊýµÄÒýÓÃ¡£¿ÉÒÔÕâÃ´Àí½â£¬extern ÊÇÓÃÀ´ÔÚÁíÒ»¸öÎÄ¼þÖÐÉùÃ÷Ò»¸öÈ«¾Ö±äÁ¿»òº¯Êý¡£
-extern ÐÞÊÎ·ûÍ¨³£ÓÃÓÚµ±ÓÐÁ½¸ö»ò¶à¸öÎÄ¼þ¹²ÏíÏàÍ¬µÄÈ«¾Ö±äÁ¿»òº¯ÊýµÄÊ±ºò£¬ÈçÏÂËùÊ¾£º
+## extern å­˜å‚¨ç±»
+extern å­˜å‚¨ç±»ç”¨äºŽæä¾›ä¸€ä¸ªå…¨å±€å˜é‡çš„å¼•ç”¨ï¼Œå…¨å±€å˜é‡å¯¹æ‰€æœ‰çš„ç¨‹åºæ–‡ä»¶éƒ½æ˜¯å¯è§çš„ã€‚å½“æ‚¨ä½¿ç”¨ 'extern' æ—¶ï¼Œå¯¹äºŽæ— æ³•åˆå§‹åŒ–çš„å˜é‡ï¼Œä¼šæŠŠå˜é‡åæŒ‡å‘ä¸€ä¸ªä¹‹å‰å®šä¹‰è¿‡çš„å­˜å‚¨ä½ç½®ã€‚
+å½“æ‚¨æœ‰å¤šä¸ªæ–‡ä»¶ä¸”å®šä¹‰äº†ä¸€ä¸ªå¯ä»¥åœ¨å…¶ä»–æ–‡ä»¶ä¸­ä½¿ç”¨çš„å…¨å±€å˜é‡æˆ–å‡½æ•°æ—¶ï¼Œå¯ä»¥åœ¨å…¶ä»–æ–‡ä»¶ä¸­ä½¿ç”¨ extern æ¥å¾—åˆ°å·²å®šä¹‰çš„å˜é‡æˆ–å‡½æ•°çš„å¼•ç”¨ã€‚å¯ä»¥è¿™ä¹ˆç†è§£ï¼Œextern æ˜¯ç”¨æ¥åœ¨å¦ä¸€ä¸ªæ–‡ä»¶ä¸­å£°æ˜Žä¸€ä¸ªå…¨å±€å˜é‡æˆ–å‡½æ•°ã€‚
+extern ä¿®é¥°ç¬¦é€šå¸¸ç”¨äºŽå½“æœ‰ä¸¤ä¸ªæˆ–å¤šä¸ªæ–‡ä»¶å…±äº«ç›¸åŒçš„å…¨å±€å˜é‡æˆ–å‡½æ•°çš„æ—¶å€™ï¼Œå¦‚ä¸‹æ‰€ç¤ºï¼š
 
-**µÚÒ»¸öÎÄ¼þ£ºmain.c**
+**ç¬¬ä¸€ä¸ªæ–‡ä»¶ï¼šmain.c**
 
-**ÊµÀý**
+**å®žä¾‹**
 
     #include &lt;stdio.h>
      
@@ -104,9 +104,9 @@ extern ÐÞÊÎ·ûÍ¨³£ÓÃÓÚµ±ÓÐÁ½¸ö»ò¶à¸öÎÄ¼þ¹²ÏíÏàÍ¬µÄÈ«¾Ö±äÁ¿»òº¯ÊýµÄÊ±ºò£¬ÈçÏÂËùÊ¾£
        write_extern();
     }
 
-**µÚ¶þ¸öÎÄ¼þ£ºsupport.c**
+**ç¬¬äºŒä¸ªæ–‡ä»¶ï¼šsupport.c**
 
-**ÊµÀý**
+**å®žä¾‹**
 
     #include &lt;stdio.h>
      
@@ -117,11 +117,11 @@ extern ÐÞÊÎ·ûÍ¨³£ÓÃÓÚµ±ÓÐÁ½¸ö»ò¶à¸öÎÄ¼þ¹²ÏíÏàÍ¬µÄÈ«¾Ö±äÁ¿»òº¯ÊýµÄÊ±ºò£¬ÈçÏÂËùÊ¾£
        printf("count is %d\n", count);   //  out :  count is 5
     }
 
-ÔÚÕâÀï£¬µÚ¶þ¸öÎÄ¼þÖÐµÄ extern ¹Ø¼ü×ÖÓÃÓÚÉùÃ÷ÒÑ¾­ÔÚµÚÒ»¸öÎÄ¼þ main.c ÖÐ¶¨ÒåµÄ count¡£ÏÖÔÚ £¬±àÒëÕâÁ½¸öÎÄ¼þ£¬ÈçÏÂËùÊ¾£º
+åœ¨è¿™é‡Œï¼Œç¬¬äºŒä¸ªæ–‡ä»¶ä¸­çš„ extern å…³é”®å­—ç”¨äºŽå£°æ˜Žå·²ç»åœ¨ç¬¬ä¸€ä¸ªæ–‡ä»¶ main.c ä¸­å®šä¹‰çš„ countã€‚çŽ°åœ¨ ï¼Œç¼–è¯‘è¿™ä¸¤ä¸ªæ–‡ä»¶ï¼Œå¦‚ä¸‹æ‰€ç¤ºï¼š
 
     $ gcc main.c support.c
 
-Õâ»á²úÉú a.out ¿ÉÖ´ÐÐ³ÌÐò£¬µ±³ÌÐò±»Ö´ÐÐÊ±£¬Ëü»á²úÉúÏÂÁÐ½á¹û£º
+è¿™ä¼šäº§ç”Ÿ a.out å¯æ‰§è¡Œç¨‹åºï¼Œå½“ç¨‹åºè¢«æ‰§è¡Œæ—¶ï¼Œå®ƒä¼šäº§ç”Ÿä¸‹åˆ—ç»“æžœï¼š
 
     count is 5
 
