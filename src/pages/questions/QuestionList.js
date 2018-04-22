@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Icon, Divider } from 'antd';
 
-
-
 const data = [
     {
         no: 1,

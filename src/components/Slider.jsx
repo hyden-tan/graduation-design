@@ -11,7 +11,7 @@ const { SubMenu } = Menu;
 @withRouter
 export default class WrapSider extends React.Component {
     toggleDoc = ({ key }) => {
-        this.props.history.replace(`${key}`);
+        this.props.history.replace(`/${key}`);
 
         const _doc = docs[key] ? docs[key] : docs['helloWorld'];
         store.save('doc', _doc.content, false);

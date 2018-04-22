@@ -43,7 +43,6 @@ export class Question extends Component {
     onSubmit = () => {
         axios.post('/run', { code: this.codeMirror.getValue()} )
             .then(response => {
-                console.log(response)
                 if (!response) {
                     return this.setState({result: '编译不通过'});
                 }

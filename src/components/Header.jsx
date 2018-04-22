@@ -110,7 +110,7 @@ export default class CustomHeader extends React.Component {
             this.setState({ menuKey: key });
             store.save('activeMenuKey', key);
             const path = key === 'doc' ? `helloWorld` : key;
-            this.props.history.replace(path);
+            this.props.history.push(`/${path}`);
         }
     }
 
@@ -130,7 +130,7 @@ export default class CustomHeader extends React.Component {
                 >
                     <Menu.Item key="doc">文档</Menu.Item>
                     <Menu.Item key="questions">题库</Menu.Item>
-
+                    <Menu.Item key="ananyse">学习情况</Menu.Item>
                     {
                         user && user.name ? (
                             <span style={{ float: 'right', color: 'gray' }} >hello {user.name}!</span>
