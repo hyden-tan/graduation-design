@@ -44,3 +44,20 @@ export const hljsDoc = (() => {
 
     return doc => marked(doc || '');
 })()
+
+
+// 获取url参数
+export function getUrlParam(key) {
+    const _params = '?' + window.location.hash.split('?')[1];
+
+    if (!_params) {
+        return '';
+    }
+
+    const reg = new RegExp('(^|&)' + key + '=([^&]*)(&|$)');
+    const obj = _params.substr(1).match(reg);
+    if (obj != null) {
+        return decodeURIComponent(obj[2]);
+    }
+    return '';
+}

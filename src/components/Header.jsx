@@ -26,7 +26,7 @@ class LoginForm extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
+        this.state = {  
             mode: '登录',
         }
     }
@@ -96,7 +96,7 @@ export default class CustomHeader extends React.Component {
                 if (response.code !== 0) {
                     message.error(response.errMsg);
                 } else {
-                    store.save('user', { name: data.userName });
+                    store.save('user', { id: response.userId, name: data.userName });
                     this.setState({ loginModalVisible: false });
                 }
             })
@@ -108,7 +108,8 @@ export default class CustomHeader extends React.Component {
             this.setState({ loginModalVisible: true });
         } else {
             this.setState({ menuKey: key });
-            store.save('activeMenuKey', key);
+
+            store.setSlider(key === 'doc');
             const path = key === 'doc' ? `helloWorld` : key;
             this.props.history.push(`/${path}`);
         }

@@ -18,6 +18,7 @@ export default class WrapSider extends React.Component {
     }
 
     render() {
+        console.log(store.slider)
         return (
             <Sider width={200} style={{background: '#fff'}}>
                 <Menu

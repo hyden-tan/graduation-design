@@ -17,6 +17,6 @@ export default class DocPage extends React.Component {
             <div style={{ width: '100%', wordWrap: 'break-word' }}
                  dangerouslySetInnerHTML={{ __html: doc }}
             />
-        )
+        );
     }
 }

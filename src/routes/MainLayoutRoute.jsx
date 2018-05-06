@@ -28,7 +28,7 @@ class MainLayoutRoute extends React.Component {
                                     <Component {...props} />
                                 </Content>
                             </Layout>
-                            {store.activeMenuKey === 'doc' && <Sider/>}
+                            {store.slider && <Sider/>}
                         </Layout>
                     </Layout>
                 )}
