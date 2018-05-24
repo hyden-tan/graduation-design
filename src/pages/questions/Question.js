@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, message } from 'antd';
+import { Button, message, Spin } from 'antd';
 import CodeMirror from 'codemirror';
 import store from '../../store';
 import { observer, inject } from 'mobx-react';
@@ -24,6 +24,7 @@ export class Question extends Component {
 
         this.state = {
             result: '',
+            loading: false,
             question: {
                 id: -1,
                 title: '',
@@ -66,15 +67,20 @@ export class Question extends Component {
     onSubmit = () => {
         const { question } = this.state;
         const { user } = this.props.store;
+        const code = this.codeMirror.getValue()  
+
+        if (!code) return;
+
+        this.setState({ loading: true });
 
         axios.post('/run', { 
             userId: user.id ? user.id : -1,
             questionId: question.id,
-            code: this.codeMirror.getValue()
+            code,
         } )
             .then(response => {
                 if (!response) {
-                    return this.setState({result: '编译不通过'});
+                    return this.setState({result: '服务器出错！'});
                 }
                 if (response.code === 0) {
                     return this.setState({result: response.result})
@@ -83,11 +89,13 @@ export class Question extends Component {
                 this.setState({result: response.errMsg})
             })
             .catch(console.log)
+            .finally(() => this.setState({loading: false}))
     }
 
     onSuccess = () => {
         const { question } = this.state;
         const { user } = this.props.store;
+    
         axios.get(`/set_question_done?userId=${user.id}&questionId=${question.id}`)
             .then(response => {
                 if (!response) {
@@ -104,20 +112,26 @@ export class Question extends Component {
 
 
     render() {
-        const { result, question } = this.state;
+        const { result, question, loading } = this.state;
 
         return (
         <div style={{ padding: '10px 5%'}}>
             <h4>题目名称： {question.title}</h4>
             <h4>题目描述:</h4>
             <p style={{textIndent: '20px'}}>{question.detail}</p>
+
             <h4 style={{marginTop: '30px'}}>编写代码</h4>
             <div style={{margin: '10px 0'}}>
-                <textarea id="code" style={{width: '100%', height: '300px'}}></textarea>
+                <textarea id="code" style={{width: '100%', height: '400px', overflow: 'auto'}}></textarea>
             </div>
-            <Button onClick={this.onSubmit}>编译运行</Button>
+
+            <div style={{width: '80px', height: '50px', textAlign: 'center'}}>
+                {!loading && <Button onClick={this.onSubmit}>编译运行</Button>}
+                {loading && <Spin />}
+            </div>
+            
             <h4 style={{marginTop: '20px'}}>运行结果:</h4>
-            <div style={{ width: '100%', minHeight: '100px', backgroundColor: '#151718', color: 'white', padding: '10px'}}>
+            <div style={{ width: '100%', height: '150px', overflow: 'auto', backgroundColor: '#151718', color: 'white', padding: '10px'}}>
                 <pre>{result}</pre> 
             </div>
             <Button type="primary" onClick={this.onSuccess} style={{ marginTop: '20px' }}>确认</Button>

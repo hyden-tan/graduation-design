@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
 import store from '../store';
-import docs from '../assets/docs';
 import history from '../history';
 
 const { Sider } = Layout;
@@ -12,13 +11,10 @@ const { SubMenu } = Menu;
 export default class WrapSider extends React.Component {
     toggleDoc = ({ key }) => {
         this.props.history.replace(`/${key}`);
-
-        const _doc = docs[key] ? docs[key] : docs['helloWorld'];
-        store.save('doc', _doc.content, false);
+        store.setActiveDoc(key);
     }
 
     render() {
-        console.log(store.slider)
         return (
             <Sider width={200} style={{background: '#fff'}}>
                 <Menu

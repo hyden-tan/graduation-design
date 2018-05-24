@@ -1,0 +1,30 @@
+.container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    text-align: center;
+    color: #2592fc;
+}
+
+.introduce {
+    text-indent: 2em;
+    font-size: 16px;
+    line-height: 2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.title {
+    text-indent: 2em;
+    font-style: italic;
+    font-size: 16px;
+}
+    
+.img {
+    width: 1000px;
+    height: 600px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
