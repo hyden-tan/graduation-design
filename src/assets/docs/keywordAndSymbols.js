@@ -1,5 +1,6 @@
 export default {
     title: 'Keyword And Symbols',
+    cc: 1,
     content: ` 我们已经看过 C 程序的基本结构，这将有助于我们理解 C 语言的其他基本的构建块。
 
 ## C 的令牌（Tokens）

@@ -9,7 +9,7 @@ export default () => {
     store.setSlider(false);
     return (
         <div className="container"> 
-            <h2 className="header">C易学系统探索之旅</h2>
+            <h2 className="header">C易学, 学C更省心！</h2>
             <p className="introduce">这是一个专为C语言初学者设计的系统，如果您刚开始学习C语言，并且正为了安装IDE环境烦恼或者正面对半天也没装好的Visual Studio头疼时，那么恭喜您，在这里有一种更简便快捷的方式学习C。下面内容将一步步带您熟悉本系统，接下来就请开始您的C语言学习之旅吧!</p>
             <p className="title">点击导航栏上的文档，您将会看到一个一篇介绍，就像下面这张图片一样，对了，这就是学习C语言的第一个程序：Hello World！它将带你打开程序世界的大门，细心的你会发现旁边有一个目录，没错，C语言各部分的内容都在里面了，跟着它，你会学完C语言全部的基础内容，剩下的就是你去探索的了！</p>
             <img className="img" src={docGif} />

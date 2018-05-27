@@ -1,5 +1,6 @@
 export default {
-    title: 'Hello World',
+    title: 'variable',
+    cc: 1,
     content: ` ## 介绍
     
 C 语言是一种通用的、面向过程式的计算机程序设计语言。1972 年，为了移植与开发 UNIX 操作系统，丹尼斯·里奇在贝尔电话实验室设计开发了 C 语言。

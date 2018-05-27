@@ -7,6 +7,7 @@ import hljs from 'highlight.js';
 import "highlight.js/styles/monokai-sublime.css";
 import store from '../../store';
 import { hljsDoc } from '../../utils';
+import { chapterSort } from '../../assets/docs';
 import './DocPage.css';
 
 @inject("store")
@@ -45,7 +46,8 @@ export default class DocPage extends React.PureComponent {
         const time = (Date.now() - this.state.time) / 1000;
         
         if (user.id) {
-            axios.get(`/record_study_time?userId=${user.id}&time=${time}&chapter=${this.preDoc}`);
+            const chapterIndex = chapterSort.indexOf(this.preDoc);
+            axios.get(`/record_study_time?userId=${user.id}&time=${time}&chapter=${this.preDoc}&chapterIndex=${chapterIndex}`);
         }
     }
 

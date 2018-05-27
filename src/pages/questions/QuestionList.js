@@ -54,6 +54,7 @@ export class QuestionList extends Component {
             width: 150,
         }
     ];
+
     render() {
         const { data } = this.state;
 

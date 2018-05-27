@@ -1,5 +1,6 @@
 export default {
     title: 'Data Structure',
+    cc: 1,
     content: `# C数据类型(Data Type)
  
 在 C 语言中，数据类型指的是用于声明不同类型的变量或函数的一个广泛的系统。变量的类型决定了变量存储占用的空间，以及如何解释存储的位模式。

@@ -14,10 +14,27 @@ import structrue from './structrue';
 import variable from './variable';
 import weiyu from './weiyu';
 
+export const chapterSort = [
+    'helloWorld',
+    'keywordAndSymbols',
+    'dataStructure',
+    'variable',
+    'constant',
+    'scope',
+    'inAndOut',
+    'conditionAndLoop',
+    'array',
+    'string',
+    'Funciton',
+    'pointer',
+    'structrue',
+    'weiyu',
+    'file',
+];
+
 export default {
     helloWorld,
     keywordAndSymbols,
-    dataStructure,
     array,
     conditionAndLoop,
     constant,

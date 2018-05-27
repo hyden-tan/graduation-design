@@ -1,5 +1,6 @@
 export default {
-    title: 'Hello World',
+    title: 'input and output',
+    cc: 1,
     content: `
     # C 输入 & 输出
 当我们提到输入时，这意味着要向程序填充一些数据。输入可以是以文件的形式或从命令行中进行。C 语言提供了一系列内置的函数来读取给定的输入，并根据需要填充到程序中。

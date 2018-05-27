@@ -131,7 +131,7 @@ export default class CustomHeader extends React.Component {
                 >
                     <Menu.Item key="doc">文档</Menu.Item>
                     <Menu.Item key="questions">题库</Menu.Item>
-                    <Menu.Item key="practice">组卷</Menu.Item>
+                    <Menu.Item key="test">考试</Menu.Item>
                     <Menu.Item key="ananyse">学习情况</Menu.Item>
                     {
                         user && user.name ? (

@@ -1,5 +1,6 @@
 export default {
     title: '位域',
+    cc: 2,
     content: ` # C 位域
     如果程序的结构中包含多个开关量，只有 TRUE/FALSE 变量，如下
     

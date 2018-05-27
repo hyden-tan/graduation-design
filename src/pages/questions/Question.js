@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, message, Spin } from 'antd';
 import CodeMirror from 'codemirror';
+import PropTypes from 'prop-types';
 import store from '../../store';
 import { observer, inject } from 'mobx-react';
 import { getUrlParam } from '../../utils';
@@ -15,10 +16,17 @@ require('codemirror/mode/cmake/cmake.js');
 @inject("store")
 @observer
 export class Question extends Component { 
+    static propTypes = {
+        questionId: PropTypes.number,
+        testId: PropTypes.number,
+        onCancel: PropTypes.func,
+        isFinish: PropTypes.isFinish,
+    }
+
     constructor(props) {
         super(props);
 
-        if (!getUrlParam('id')) {
+        if (!getUrlParam('id') && !props.questionId) {
             props.history.push('/questions')
         }
 
@@ -34,14 +42,15 @@ export class Question extends Component {
     }
 
     componentDidMount() {
-        this.codemirrorInit();
         this.getQuestion();
+        this.getCode();
+        this.codemirrorInit();
     }
 
     codeMirror;
 
     getQuestion = async () => {
-        const id = getUrlParam('id');
+        const id = this.props.questionId || getUrlParam('id');
         const res = await axios.get('/get_question?id=' + id);
         
         if (res) {
@@ -49,11 +58,11 @@ export class Question extends Component {
         }
     } 
 
-    codemirrorInit = (myTextArea) => {
+    codemirrorInit = () => {
         this.codeMirror = CodeMirror.fromTextArea(document.querySelector('#code'), {
+            mode:  'cmake',
             lineNumbers: true,
             keyMap: "sublime",
-            mode:  'cmake',
             theme: 'seti',
             lineWrapping:true,
             foldGutter: true,
@@ -74,8 +83,10 @@ export class Question extends Component {
         this.setState({ loading: true });
 
         axios.post('/run', { 
+            type: this.props.testId ? 'test' : 'practice',
             userId: user.id ? user.id : -1,
             questionId: question.id,
+            testId: this.props.testId,
             code,
         } )
             .then(response => {
@@ -96,7 +107,12 @@ export class Question extends Component {
         const { question } = this.state;
         const { user } = this.props.store;
     
-        axios.get(`/set_question_done?userId=${user.id}&questionId=${question.id}`)
+        axios.post(`/set_question_done`, {
+            type: this.props.testId ? 'test' : 'practice',
+            userId: user.id,
+            testId: this.props.testId,
+            questionId: this.props.questionId || getUrlParam('id')
+        })
             .then(response => {
                 if (!response) {
                     return message.error('服务器失败，已联系管理员！');
@@ -105,11 +121,26 @@ export class Question extends Component {
                     return message.error('服务器失败，已联系管理员！');
                 }
                 
-                message.success('操作成功！');
+                message.success('您已完成本题！');
             })
             .catch(console.log)
     }
 
+    getCode =() => {
+        const { question } = this.state;
+        const { user } = this.props.store;
+
+        axios.post(`/get_code`, {
+            type: this.props.testId ? 'test' : 'practice',
+            userId: user.id ? user.id : -1,
+            questionId: this.props.questionId || getUrlParam('id'),
+            testId: this.props.testId,
+        })
+            .then(code => {
+                this.codeMirror.setValue(code);
+            })
+            .catch(console.log)
+    }
 
     render() {
         const { result, question, loading } = this.state;
@@ -134,7 +165,9 @@ export class Question extends Component {
             <div style={{ width: '100%', height: '150px', overflow: 'auto', backgroundColor: '#151718', color: 'white', padding: '10px'}}>
                 <pre>{result}</pre> 
             </div>
-            <Button type="primary" onClick={this.onSuccess} style={{ marginTop: '20px' }}>确认</Button>
+            {('isFinish' in this.props && !this.props.isFinish || !('isFinish' in this.props)) && 
+                <Button type="primary" onClick={this.onSuccess} style={{ marginTop: '20px', marginRight: '20px' }}>确认</Button>}
+            {this.props.testId && <Button onClick={this.props.onCancel} style={{ marginTop: '20px' }}>返回</Button>}
         </div>
         )
     }
